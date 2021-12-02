@@ -11,13 +11,17 @@ let rng = uuidv4();
 })
 export class CustchatComponent implements OnInit {
 
-  @Input() data: any[]=[];
+  data: any[]=[];
 
   constructor(private dataservice: DataService) { }
 
   ngOnInit() {
     this.dataservice.getData()
-        .subscribe(stuff => this.data = stuff);
+        .subscribe(stuff => {
+          this.data = stuff
+          console.log(stuff);
+        
+        });
   }
 
 }

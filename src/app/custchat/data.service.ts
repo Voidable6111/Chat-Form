@@ -8,16 +8,26 @@ import { from, Observable } from 'rxjs';
 })
 export class DataService {
 
-    private urls: string = "/app/custchat/data.json";
+    private urls: string = "http://73.19.65.35:3500/api";
 
     constructor(private http: HttpClient) { }
 
-    getData(): Observable<iData[]>{
-        return this.http.get<iData[]>(this.urls);
+    getChannels(){
+        return this.urls+"/channel";
     }
 
-    getName(index: number): any{
-        
+    getData(): Observable<iData[]>{
+        return this.http.get<iData[]>(this.urls+"/channel/cdickson");
+    }
+
+    newPost(item: iData): Observable<iData[]>{
+        return this.http.post<iData[]>(this.urls+"/channel/cdickson", item);
+    }
+    newPatch(item: iData[]): Observable<iData[]>{
+        return this.http.patch<iData[]>(this.urls+"/channel/cdickson", item);
+    }
+    deleteThis(){
+        return console.log("success");
     }
 
 }

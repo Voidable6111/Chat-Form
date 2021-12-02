@@ -5,11 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustchatComponent } from './custchat/custchat.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [			
     AppComponent,
-    CustchatComponent
+    CustchatComponent,
+      DashboardComponent,
+      DashboardComponent
    ],
   imports: [
     BrowserModule,
