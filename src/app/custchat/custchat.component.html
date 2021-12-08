@@ -1,4 +1,11 @@
 <div class="custchat">
-    <button type="submit">Submit</button>
+<form [formGroup]="postThis" (ngSubmit)="onSubmit()">
+    <label>username</label><br>
+    <input type="text" id="username" formControlName="username"><br>
+    <label>message</label><br>
+    <input type="text" id="message" formControlName="message"><br>
+    <input type="submit" [disabled] = "!postThis.valid">
+</form>
 </div>
+<p>Is this valid: {{postThis.status}}</p>
 <pre>{{data | json}}</pre>
